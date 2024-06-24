@@ -21,6 +21,8 @@ const AddUserForm = ({ handleClose }: any) => {
     if (response) {
       dispatch(addUser(response))
       handleClose()
+    } else {
+      alert("email has already been taken")
     }
   };
   return (

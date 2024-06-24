@@ -28,10 +28,7 @@ const UsersLayout = () => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
-    const handleSubmit = (e: any) => {
-        e?.preventDefault()
-        console.log('adding user...', e)
-    };
+
     const handleOnRemoveUser = async (user: any) => {
         const userConfirmed = window.confirm(`Continue with the deletion of user ${user.id} - (${user.name}) ?`);
         if (userConfirmed) {
@@ -92,11 +89,11 @@ const UsersLayout = () => {
             ))}
             {
                 modalType == 'Add' ? (
-                    <Modal show={isModalOpen} handleClose={closeModal} handleSubmit={handleSubmit} modalType='Add' />
+                    <Modal show={isModalOpen} handleClose={closeModal} modalType='Add' />
 
                 ) : (
                     /* We can use this modal instead of redirecting to a new page (/edit/:id) */
-                    <Modal show={isModalOpen} handleClose={closeModal} handleSubmit={handleSubmit} modalType='Edit' />
+                    <Modal show={isModalOpen} handleClose={closeModal} modalType='Edit' />
                 )
             }
         </ul>

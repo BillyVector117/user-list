@@ -16,7 +16,6 @@ export const createUser: any = async (data: INewUser) => {
                 'Content-Type': 'application/json'
             }
         });
-        console.log('response', response)
         if (response.status == 201) {
             return response.data
         } else {
@@ -24,6 +23,7 @@ export const createUser: any = async (data: INewUser) => {
         }
     } catch (error) {
         console.log('err.message', error)
+        return false
     }
 
 
